@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+# better video
+## 介绍
+基于React 的video播放器组件
+1. 界面简约
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+2. 可配置
 
-## Available Scripts
+3. 流畅播放
 
-In the project directory, you can run:
+4. 支持m3u8格式
 
-### `npm start`
+6. 弹幕配置
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+7. 清晰度切换
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+支持多种事件
+## 配置参数
++ properties:视频属性
++ videoStyle:视频样式
++ controlConfig:视频控制设置
 
-### `npm test`
+## 事件
+| 事件名称 | 如何触发 |
+| --- | --- |
+| play | 媒体收到开始播放的请求 |
+| pause | 暂停 |
+| canplay | 播放可以开始 |
+| ended | 媒体播放过一次就停止了 |
+| waiting | 暂停播放以下载更多数据 |
+| canplaythrough | 播放可以继续，不应中断。读取状态为3 |
+| error | 下载过程中发生网络错误 |
+| volumechange | volume或muted属性的值已更改 |
+| emptied | 网络连接中断 |
+| ratechange | 媒体播放速率更改 |
+| empty | 发生错误，阻止媒体下载 |
+| seeking | 播放已移动到新位置 |
+| timeupdate | 当前时间非常规或意外更改 |
+| stalled | 浏览器试图下载，但尚未收到数据 |
+| abort | 下载中断 |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
