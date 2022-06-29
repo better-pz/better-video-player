@@ -182,7 +182,7 @@ export interface videoMethod<T = noParVoid> {
   play: T;
   /**
    * @description 暂停
-   */
+   */ 
   pause: T;
   /**
    * @description 设置音量
