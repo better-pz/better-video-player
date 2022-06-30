@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Video option={{
-      videoSrc: "https://gs-files.oss-cn-hongkong.aliyuncs.com/okr/test/file/2021/07/01/haiwang.mp4",
+      videoSrc: "/video/看火人_x264.mp4",
       width: 750,
       height: 200,
     }} />

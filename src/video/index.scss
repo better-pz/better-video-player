@@ -1,0 +1,41 @@
+.Better-player-container {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 100;
+  // background-color: #000;
+  .Better-player {
+    @include wh(100%, 100%);
+    background-color: #000;
+    // 去除视频黑边
+    object-fit: cover;
+    @include position(absolute, 0, auto, auto, 0);
+    z-index: 1;
+  }
+  .Better-light-off-mask {
+    @include wh(100vw, 100vh);
+    @include position(fixed, 0, auto, auto, 0);
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+  }
+  .video-no-useful-tip,
+  .buffering-animation {
+    @include wh(100%, 100px);
+    @include position(fixed, 50%, auto, auto, 0);
+    @include style(16px, #fff);
+    margin-top: -50px;
+    text-align: center;
+    line-height: 100px;
+    z-index: 99;
+  }
+  .player-loading {
+    @include position(absolute, 50%, auto, auto, 50%);
+    z-index: 30;
+    transform: translate(-50%, -50%);
+  }
+}

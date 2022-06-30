@@ -43,7 +43,7 @@ export interface videoOption<T = string, K = boolean, U = number> {
   /**
    * @description 视频容器的height
    */
-  height: U;
+  height?: U;
   /**
    * @description 视频地址
    */
