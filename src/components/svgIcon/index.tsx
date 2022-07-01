@@ -1,11 +1,14 @@
 interface SvgIconProps {
   iconClass:string;
   fill?:string;
+
 }
  
 const SvgIcon: React.FC<SvgIconProps> = () => {
-  return ( <>
-  </> );
+  return (
+     <>
+     </> 
+  );
 }
  
 export default SvgIcon;

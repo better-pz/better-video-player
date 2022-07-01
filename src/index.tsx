@@ -12,7 +12,7 @@ root.render(
     <Video option={{
       videoSrc: "/video/看火人_x264.mp4",
       width: 750,
-      height: 200,
+      height: 400,
     }} />
   </React.StrictMode>
 );
