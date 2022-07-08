@@ -1,0 +1,32 @@
+@import 'src/assets/css/mixin.scss';
+
+.Better-controller-container {
+  @include wh(100%, 100%);
+  @include position(absolute, auto, auto, 0, 50%);
+  transform: translateX(-50%);
+  z-index: 3;
+  cursor: pointer;
+  .Better-click-to-play-pause {
+    @include wh(100%, calc(100% - 47px));
+    @include position(absolute, 0, auto, auto, 0);
+    z-index: 101;
+    outline: none;
+  }
+  .play-icon {
+    display: inline-block;
+    @include style(24px, #fff);
+    @include wh(40px, 40px);
+    @include position(absolute, auto, 30px, 60px, auto);
+    z-index: 100;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 30%;
+    opacity: 0.7;
+  }
+  .Better-progress-controls-wrap {
+    width: calc(100% - 26px);
+    @include position(absolute, auto, auto, 0, 50%);
+    z-index: 102;
+    transform: translateX(-50%);
+  }
+}

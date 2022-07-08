@@ -1,7 +1,11 @@
 import React, { forwardRef, useMemo, useRef } from 'react'
 import { videoparameter, BetterPlayerRef } from '@/interface';
 // import '@/assets/css/reset.scss';
+import { FlowContext, useVideoFlow } from './context';
+
 import './index.scss';
+import Controller from './controller';
+
 const BetterPlayer = function BetterPlayer(props: videoparameter, ref: React.Ref<unknown> | undefined) {
   const {
     option,
@@ -9,8 +13,10 @@ const BetterPlayer = function BetterPlayer(props: videoparameter, ref: React.Ref
     style,
 
   } = props
-  const { videoSrc, width, height, } = option
 
+  const { videoSrc, width, height, } = option
+  // 关灯对象
+  const lightOffMaskRef = useRef<HTMLElement>(null)
   /**
    * @description 视频对象
   */
@@ -19,6 +25,8 @@ const BetterPlayer = function BetterPlayer(props: videoparameter, ref: React.Ref
    * @description 视频容器对象
    */
   const videoContainerRef = useRef<HTMLElement>(null!);
+  const { videoFlow, dispatch } = useVideoFlow();
+
   // 使用useMemo videSrc值改变的时候前端的函数才会被调用
   const returnVideoSource = useMemo(() => {
     return (
@@ -29,6 +37,19 @@ const BetterPlayer = function BetterPlayer(props: videoparameter, ref: React.Ref
       </>
     )
   }, [videoSrc]);
+  const contextProps = useMemo(() => {
+    return Object.assign(
+      {},
+      {
+        videoRef: videoRef.current,
+        videoContainerRef: videoContainerRef.current,
+        lightOffMaskRef: lightOffMaskRef.current,
+        dispatch,
+        videoFlow,
+        propsAttributes: option,
+      },
+    );
+  }, [videoRef.current, videoFlow, option]);
   return (
     <figure className={`Better-player-container ${className}`}
       ref={videoContainerRef}
@@ -45,7 +66,10 @@ const BetterPlayer = function BetterPlayer(props: videoparameter, ref: React.Ref
       >
         {returnVideoSource}
       </video>
-      <figcaption>A Better viode player</figcaption>
+
+      <FlowContext.Provider value={contextProps}>
+        <Controller />
+      </FlowContext.Provider>
     </figure>
   )
 }
